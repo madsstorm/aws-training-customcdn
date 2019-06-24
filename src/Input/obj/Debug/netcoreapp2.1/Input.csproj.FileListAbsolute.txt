@@ -1,0 +1,10 @@
+C:\projects\aws-training-customcdn\src\Input\bin\Debug\netcoreapp2.1\Input.deps.json
+C:\projects\aws-training-customcdn\src\Input\bin\Debug\netcoreapp2.1\Input.runtimeconfig.json
+C:\projects\aws-training-customcdn\src\Input\bin\Debug\netcoreapp2.1\Input.runtimeconfig.dev.json
+C:\projects\aws-training-customcdn\src\Input\bin\Debug\netcoreapp2.1\Input.dll
+C:\projects\aws-training-customcdn\src\Input\bin\Debug\netcoreapp2.1\Input.pdb
+C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.csproj.CoreCompileInputs.cache
+C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.AssemblyInfoInputs.cache
+C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.AssemblyInfo.cs
+C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.dll
+C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.pdb

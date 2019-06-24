@@ -1,0 +1,14 @@
+service: customcdn
+
+provider:
+  name: aws
+  runtime: dotnetcore2.1
+  region: eu-central-1
+
+functions:
+  input:
+    handler: Input::Input.InputFunction::FunctionHandler
+    events:
+    - http:
+        path: input
+        method: post

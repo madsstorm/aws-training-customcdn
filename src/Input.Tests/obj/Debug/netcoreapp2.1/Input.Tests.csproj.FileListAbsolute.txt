@@ -1,0 +1,17 @@
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\Input.Tests.deps.json
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\Input.Tests.runtimeconfig.json
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\Input.Tests.runtimeconfig.dev.json
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\Input.Tests.dll
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\Input.Tests.pdb
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\Input.dll
+C:\projects\aws-training-customcdn\src\Input.Tests\bin\Debug\netcoreapp2.1\Input.pdb
+C:\projects\aws-training-customcdn\src\Input.Tests\obj\Debug\netcoreapp2.1\Input.Tests.csprojAssemblyReference.cache
+C:\projects\aws-training-customcdn\src\Input.Tests\obj\Debug\netcoreapp2.1\Input.Tests.csproj.CoreCompileInputs.cache
+C:\projects\aws-training-customcdn\src\Input.Tests\obj\Debug\netcoreapp2.1\Input.Tests.AssemblyInfoInputs.cache
+C:\projects\aws-training-customcdn\src\Input.Tests\obj\Debug\netcoreapp2.1\Input.Tests.AssemblyInfo.cs
+C:\projects\aws-training-customcdn\src\Input.Tests\obj\Debug\netcoreapp2.1\Input.Tests.csproj.CopyComplete
+C:\projects\aws-training-customcdn\src\Input.Tests\obj\Debug\netcoreapp2.1\Input.Tests.dll
+C:\projects\aws-training-customcdn\src\Input.Tests\obj\Debug\netcoreapp2.1\Input.Tests.pdb
