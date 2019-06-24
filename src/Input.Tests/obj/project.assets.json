@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Amazon.Lambda.APIGatewayEvents/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.dll": {}
+        }
+      },
       "Amazon.Lambda.Core/1.1.0": {
         "type": "package",
         "compile": {
@@ -1719,6 +1731,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "1.2.0",
           "Amazon.Lambda.Core": "1.1.0",
           "Amazon.Lambda.Serialization.Json": "1.4.0"
         },
@@ -1732,6 +1745,21 @@
     }
   },
   "libraries": {
+    "Amazon.Lambda.APIGatewayEvents/1.2.0": {
+      "sha512": "9yrwPuA1RNhwpNBEgHaohcrE0P+TqRDf2CUb/goLJLAEpxOXBSxPOH0EYCDhIdnrrpkGMgm5SDXK3YYufnHP4A==",
+      "type": "package",
+      "path": "amazon.lambda.apigatewayevents/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.lambda.apigatewayevents.1.2.0.nupkg.sha512",
+        "amazon.lambda.apigatewayevents.nuspec",
+        "lib/netstandard1.3/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/netstandard1.3/Amazon.Lambda.APIGatewayEvents.xml",
+        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/netstandard2.0/Amazon.Lambda.APIGatewayEvents.xml"
+      ]
+    },
     "Amazon.Lambda.Core/1.1.0": {
       "sha512": "ueGId8b4DEHoVWkHDs3iAJH8IUSAUGu5AqkoI/Syl4RuByzik7lz9IjoImiGAlGhtsQV02MHNeTo04IFjS37gQ==",
       "type": "package",
