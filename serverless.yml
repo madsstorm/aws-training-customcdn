@@ -6,7 +6,7 @@ provider:
   region: eu-central-1
 
 package:
-  artifact: bin/release/netcoreapp2.1/deploy-package.zip
+  artifact: src/Input/bin/release/netcoreapp2.1/deploy-package.zip
 
 functions:
   input:
@@ -15,3 +15,10 @@ functions:
     - http:
         path: input
         method: post
+
+resources:
+  Resources:
+    ImageQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "ImageQueue"

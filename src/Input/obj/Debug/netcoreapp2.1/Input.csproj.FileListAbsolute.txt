@@ -8,3 +8,4 @@ C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.Assem
 C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.AssemblyInfo.cs
 C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.dll
 C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.pdb
+C:\projects\aws-training-customcdn\src\Input\obj\Debug\netcoreapp2.1\Input.csprojAssemblyReference.cache
