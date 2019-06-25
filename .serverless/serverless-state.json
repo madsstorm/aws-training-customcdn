@@ -36,6 +36,12 @@
               "LogGroupName": "/aws/lambda/customcdn-dev-input"
             }
           },
+          "OutputLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/customcdn-dev-output"
+            }
+          },
           "IamRoleLambdaExecution": {
             "Type": "AWS::IAM::Role",
             "Properties": {
@@ -91,6 +97,17 @@
                             "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/customcdn-dev*:*:*"
                           }
                         ]
+                      },
+                      {
+                        "Effect": "Allow",
+                        "Action": [
+                          "sqs:ReceiveMessage",
+                          "sqs:DeleteMessage",
+                          "sqs:GetQueueAttributes"
+                        ],
+                        "Resource": [
+                          "arn:aws:sqs:eu-central-1:265904212570:ImageQueue"
+                        ]
                       }
                     ]
                   }
@@ -119,7 +136,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/customcdn/dev/1561450154210-2019-06-25T08:09:14.210Z/src/Input/bin/release/netcoreapp2.1/deploy-package.zip"
+                "S3Key": "serverless/customcdn/dev/1561456193699-2019-06-25T09:49:53.699Z/src/Input/bin/release/netcoreapp2.1/deploy-package.zip"
               },
               "FunctionName": "customcdn-dev-input",
               "Handler": "Input::Input.InputFunction::FunctionHandler",
@@ -138,14 +155,50 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "InputLambdaVersionwQtRdSt4L6LWUiJGNjJG1W9ppq9hBpDSzEgySJ33ww8": {
+          "InputLambdaVersionCuDFtJ5SFJzf5iXNDZNvuTM7MYhOU9BHyvmhX6aVw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "InputLambdaFunction"
               },
-              "CodeSha256": "Zc570+zw/pxiVBNAaw56Hyb0S/sKq16oxgPseT9w550="
+              "CodeSha256": "vsis9oRNjwAglJOOi1bjbY9jsebNjB6RyvW99C+cfF8="
+            }
+          },
+          "OutputLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/customcdn/dev/1561456193699-2019-06-25T09:49:53.699Z/src/Input/bin/release/netcoreapp2.1/deploy-package.zip"
+              },
+              "FunctionName": "customcdn-dev-output",
+              "Handler": "Input::Input.OutputFunction::FunctionHandler",
+              "MemorySize": 1024,
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              },
+              "Runtime": "dotnetcore2.1",
+              "Timeout": 6
+            },
+            "DependsOn": [
+              "OutputLogGroup",
+              "IamRoleLambdaExecution"
+            ]
+          },
+          "OutputLambdaVersionfHfmOzv1Ki6zePiczgh92VY8x4OwdnpulHfhvH1MH6Q": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "OutputLambdaFunction"
+              },
+              "CodeSha256": "vsis9oRNjwAglJOOi1bjbY9jsebNjB6RyvW99C+cfF8="
             }
           },
           "ApiGatewayRestApi": {
@@ -217,7 +270,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1561450152777": {
+          "ApiGatewayDeployment1561456192280": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -266,6 +319,21 @@
               }
             }
           },
+          "OutputEventSourceMappingSQSImageQueue": {
+            "Type": "AWS::Lambda::EventSourceMapping",
+            "DependsOn": "IamRoleLambdaExecution",
+            "Properties": {
+              "BatchSize": 10,
+              "EventSourceArn": "arn:aws:sqs:eu-central-1:265904212570:ImageQueue",
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "OutputLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Enabled": "True"
+            }
+          },
           "ImageQueue": {
             "Type": "AWS::SQS::Queue",
             "Properties": {
@@ -282,7 +350,13 @@
           "InputLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "InputLambdaVersionwQtRdSt4L6LWUiJGNjJG1W9ppq9hBpDSzEgySJ33ww8"
+              "Ref": "InputLambdaVersionCuDFtJ5SFJzf5iXNDZNvuTM7MYhOU9BHyvmhX6aVw"
+            }
+          },
+          "OutputLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "OutputLambdaVersionfHfmOzv1Ki6zePiczgh92VY8x4OwdnpulHfhvH1MH6Q"
             }
           },
           "ServiceEndpoint": {
@@ -358,6 +432,23 @@
         "timeout": 6,
         "runtime": "dotnetcore2.1",
         "vpc": {}
+      },
+      "output": {
+        "handler": "Input::Input.OutputFunction::FunctionHandler",
+        "events": [
+          {
+            "sqs": {
+              "arn": "arn:aws:sqs:eu-central-1:265904212570:ImageQueue",
+              "batchSize": 10
+            }
+          }
+        ],
+        "name": "customcdn-dev-output",
+        "package": {},
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "dotnetcore2.1",
+        "vpc": {}
       }
     },
     "resources": {
@@ -375,7 +466,7 @@
     "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/customcdn/dev/1561450154210-2019-06-25T08:09:14.210Z",
+    "artifactDirectoryName": "serverless/customcdn/dev/1561456193699-2019-06-25T09:49:53.699Z",
     "artifact": "src/Input/bin/release/netcoreapp2.1/deploy-package.zip"
   }
 }

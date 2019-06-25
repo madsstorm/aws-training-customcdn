@@ -27,14 +27,15 @@ namespace Input
 
             string email = body.email;
 
-            IEnumerable<dynamic> images = body.images;
-
             IAmazonSQS amazonSQS = new AmazonSQSClient(RegionEndpoint.EUCentral1);
 
-            SendMessageRequest sendMessageRequest = new SendMessageRequest { QueueUrl = "https://sqs.eu-central-1.amazonaws.com/265904212570/ImageQueue" };
-            sendMessageRequest.MessageBody = "Hej Mads";
-
-            SendMessageResponse sendMessageResponse = amazonSQS.SendMessageAsync(sendMessageRequest).Result;
+            IEnumerable<dynamic> images = body.images;
+            foreach (var image in images)
+            {
+                SendMessageRequest sendMessageRequest = new SendMessageRequest { QueueUrl = "https://sqs.eu-central-1.amazonaws.com/265904212570/ImageQueue" };
+                sendMessageRequest.MessageBody = image.url;
+                SendMessageResponse sendMessageResponse = amazonSQS.SendMessageAsync(sendMessageRequest).Result;
+            }
 
             return new APIGatewayProxyResponse { StatusCode = 200, Body = $"OK" };
         }
