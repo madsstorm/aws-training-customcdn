@@ -10,17 +10,15 @@
         "projectUniqueName": "C:\\projects\\aws-training-customcdn\\src\\Input.Tests\\Input.Tests.csproj",
         "projectName": "Input.Tests",
         "projectPath": "C:\\projects\\aws-training-customcdn\\src\\Input.Tests\\Input.Tests.csproj",
-        "packagesPath": "C:\\Users\\MadsStorm\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mads.hansen\\.nuget\\packages\\",
         "outputPath": "C:\\projects\\aws-training-customcdn\\src\\Input.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MadsStorm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\mads.hansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -28,7 +26,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "http://nuget.episerver.com/feed/packages.svc/": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
@@ -89,17 +87,15 @@
         "projectUniqueName": "C:\\projects\\aws-training-customcdn\\src\\Input\\Input.csproj",
         "projectName": "Input",
         "projectPath": "C:\\projects\\aws-training-customcdn\\src\\Input\\Input.csproj",
-        "packagesPath": "C:\\Users\\MadsStorm\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\mads.hansen\\.nuget\\packages\\",
         "outputPath": "C:\\projects\\aws-training-customcdn\\src\\Input\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MadsStorm\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\mads.hansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -107,7 +103,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "http://nuget.episerver.com/feed/packages.svc/": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
@@ -123,6 +119,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "AWSSDK.SQS": {
+              "target": "Package",
+              "version": "[3.3.100.37, )"
+            },
             "Amazon.Lambda.APIGatewayEvents": {
               "target": "Package",
               "version": "[1.2.0, )"

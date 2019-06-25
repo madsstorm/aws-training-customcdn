@@ -1,5 +1,8 @@
+using Amazon;
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
+using Amazon.SQS;
+using Amazon.SQS.Model;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text;
@@ -28,6 +31,13 @@ namespace Input
             foreach(dynamic image in images)
             {
             }
+
+            var amazonSQSClient = new AmazonSQSClient(RegionEndpoint.EUCentral1);
+
+            SendMessageRequest sendMessageRequest = new SendMessageRequest { QueueUrl = "https://sqs.eu-central-1.amazonaws.com/265904212570/ImageQueue" };
+            sendMessageRequest.MessageBody = "Hej Mads";
+
+            SendMessageResponse sendMessageResponse = amazonSQSClient.SendMessageAsync(sendMessageRequest).Result;
 
             return new APIGatewayProxyResponse { StatusCode = 200, Body = $"OK" };
         }

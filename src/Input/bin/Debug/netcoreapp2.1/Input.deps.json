@@ -1,13 +1,14 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "e91bd540a85e292b0e110b625867424f034ef67c"
+    "signature": "44df3f82f16f6dc9735fdea8464148932152afc3"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.1": {
       "Input/1.0.0": {
         "dependencies": {
+          "AWSSDK.SQS": "3.3.100.37",
           "Amazon.Lambda.APIGatewayEvents": "1.2.0",
           "Amazon.Lambda.Core": "1.1.0",
           "Amazon.Lambda.Serialization.Json": "1.4.0"
@@ -46,6 +47,25 @@
           "lib/netstandard1.3/Amazon.Lambda.Serialization.Json.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "AWSSDK.Core/3.3.103.1": {
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Core.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.103.1"
+          }
+        }
+      },
+      "AWSSDK.SQS/3.3.100.37": {
+        "dependencies": {
+          "AWSSDK.Core": "3.3.103.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.SQS.dll": {
+            "assemblyVersion": "3.3.0.0",
+            "fileVersion": "3.3.100.37"
           }
         }
       },
@@ -383,6 +403,20 @@
       "sha512": "sha512-6onwMtoj78Fy/LKTAeTxxEM+zPHG+UiIS1eiQX4TQsE9QNM0CvwRY0bPV9fP+ADVOQ6rdpXamh+CaGKwnpa07A==",
       "path": "amazon.lambda.serialization.json/1.4.0",
       "hashPath": "amazon.lambda.serialization.json.1.4.0.nupkg.sha512"
+    },
+    "AWSSDK.Core/3.3.103.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-B++aF4hdAL6/ELU2+3GMOOgZSWAuax42l2hhMvHOvQu4GSMF10/ArLS6Wu5CM3dEAE+hT53sOPeFkIkVof5cjA==",
+      "path": "awssdk.core/3.3.103.1",
+      "hashPath": "awssdk.core.3.3.103.1.nupkg.sha512"
+    },
+    "AWSSDK.SQS/3.3.100.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NgXxMogJ/w2F9KKWJwijX5JDrKGHDYGRZnlodnnlOCeFJLaD2S8GEcFJKyJg8YGkiKPAirxSj+7egM1wMFPiCQ==",
+      "path": "awssdk.sqs/3.3.100.37",
+      "hashPath": "awssdk.sqs.3.3.100.37.nupkg.sha512"
     },
     "Microsoft.CSharp/4.0.1": {
       "type": "package",
