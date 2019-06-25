@@ -119,7 +119,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/customcdn/dev/1561412671306-2019-06-24T21:44:31.306Z/src/Input/bin/release/netcoreapp2.1/deploy-package.zip"
+                "S3Key": "serverless/customcdn/dev/1561450154210-2019-06-25T08:09:14.210Z/src/Input/bin/release/netcoreapp2.1/deploy-package.zip"
               },
               "FunctionName": "customcdn-dev-input",
               "Handler": "Input::Input.InputFunction::FunctionHandler",
@@ -138,14 +138,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "InputLambdaVersion5WGrfsn0HXCc1puFeMQkgXUhicaQjNtNT2cKiEc": {
+          "InputLambdaVersionwQtRdSt4L6LWUiJGNjJG1W9ppq9hBpDSzEgySJ33ww8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "InputLambdaFunction"
               },
-              "CodeSha256": "/gjsWiB1Iuk5hZJrPlKXMieWRHRlWZTcVvPI8Ynwv2A="
+              "CodeSha256": "Zc570+zw/pxiVBNAaw56Hyb0S/sKq16oxgPseT9w550="
             }
           },
           "ApiGatewayRestApi": {
@@ -217,7 +217,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1561412669336": {
+          "ApiGatewayDeployment1561450152777": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -282,7 +282,7 @@
           "InputLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "InputLambdaVersion5WGrfsn0HXCc1puFeMQkgXUhicaQjNtNT2cKiEc"
+              "Ref": "InputLambdaVersionwQtRdSt4L6LWUiJGNjJG1W9ppq9hBpDSzEgySJ33ww8"
             }
           },
           "ServiceEndpoint": {
@@ -375,7 +375,7 @@
     "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/customcdn/dev/1561412671306-2019-06-24T21:44:31.306Z",
+    "artifactDirectoryName": "serverless/customcdn/dev/1561450154210-2019-06-25T08:09:14.210Z",
     "artifact": "src/Input/bin/release/netcoreapp2.1/deploy-package.zip"
   }
 }
