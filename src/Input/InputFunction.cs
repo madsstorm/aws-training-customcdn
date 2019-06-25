@@ -6,6 +6,7 @@ using Amazon.SQS.Model;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.Json.JsonSerializer))]
@@ -21,7 +22,7 @@ namespace Input
         /// <param name="input"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public APIGatewayProxyResponse FunctionHandler(APIGatewayProxyRequest input, ILambdaContext context)
+        public async Task<APIGatewayProxyResponse> FunctionHandler(APIGatewayProxyRequest input, ILambdaContext context)
         {
             dynamic body = JsonConvert.DeserializeObject(input.Body);
 
@@ -34,7 +35,7 @@ namespace Input
             {
                 SendMessageRequest sendMessageRequest = new SendMessageRequest { QueueUrl = "https://sqs.eu-central-1.amazonaws.com/265904212570/ImageQueue" };
                 sendMessageRequest.MessageBody = image.url;
-                SendMessageResponse sendMessageResponse = amazonSQS.SendMessageAsync(sendMessageRequest).Result;
+                SendMessageResponse sendMessageResponse = await amazonSQS.SendMessageAsync(sendMessageRequest);
             }
 
             return new APIGatewayProxyResponse { StatusCode = 200, Body = $"OK" };
